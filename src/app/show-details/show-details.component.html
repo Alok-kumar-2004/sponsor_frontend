@@ -3,13 +3,20 @@
 
 <div class="container">
 
-<h3>Employee Details</h3>
+<h3>Sponsors Details</h3>
 <br>
 <div class="box">
     
-    <div>
+  <div class="box d-flex align-items-start">
+    <!-- Avatar Image -->
+    <div class="me-3">
+        <img *ngIf="sponsors.image; else defaultImage" [src]="sponsors.image" 
+             alt="Sponsor Image" class="img-thumbnail" width="150" height="150" />
 
-      <img src="../assets/download.jpg">
+        <ng-template #defaultImage>
+            <img src="../assets/download.jpg" alt="Default Avatar" 
+                 class="img-thumbnail" width="150" height="150" />
+        </ng-template>
     </div>
 <div >
     <table  class=" table table-striped  border-dark  ">
@@ -24,44 +31,47 @@
     <tbody>
     <tr>
           <td><b>Id</b></td>
-          <td>{{employee.id}}</td>
+          <td>{{sponsors.id}}</td>
         </tr>
         <tr>
-          <td><b>First Name</b></td>
-          <td>{{employee.fname}}</td>
+          <td><b> sponsorName</b></td>
+          <td>{{sponsors.sponsorName}}</td>
         </tr>
         <tr>
-          <td><b>Last Name</b></td>
-          <td>{{employee.lname}}</td>
+          <td><b>contactPerson Name</b></td>
+          <td>{{sponsors.contactPerson}}</td>
         </tr>
         <tr>
           <td><b>Email</b></td>
-          <td>{{employee.email}}</td>
+          <td>{{sponsors.email}}</td>
         </tr>
         <tr>
-          <td><b>Salary</b></td>
-          <td>{{employee.salary}}</td>
+          <td><b>contributionAmount</b></td>
+          <td>{{sponsors.contributionAmount}}</td>
         </tr>
         <tr>
-          <td><b>Department</b></td>
-          <td>{{employee.department}}</td>
+          <td><b>Sponsorship Status</b></td>
+          <td>{{sponsors.SponsorshipStatus}}</td>
         </tr>
         <tr>
-          <td><b>Designation</b></td>
-          <td>{{employee.designation}}</td>
+          <td><b>Start Date</b></td>
+          <td>{{sponsors.startDate}}</td>
         </tr>
         <tr>
-          <td><b>Joining Date</b></td>
-          <td>{{employee.joiningDate}}</td>
+          <td><b>End Date</b></td>
+          <td>{{sponsors.endDate}}</td>
         </tr>
+
+        <div *ngIf="sponsors.image">
+          <img [src]="sponsors.image" alt="Sponsor Image" class="img-thumbnail" width="150" height="150" />
+      </div>
 
     </tbody>    
       </table>
 
-      <a routerLink="/updating-by-id/{{employee.id}}" id="btn1"class="btn btn-secondary">Update Details</a>
-      <a routerLink="/show-all-employees" id="btn2" class="btn btn-danger">Back</a>
+      <a routerLink ="/updating-by-id/{{sponsors.id}}"  id="btn1"class="btn btn-secondary">Update </a>
+      <a routerLink="/show-all-sponsors" id="btn2" class="btn btn-danger">Back</a>
 </div>
     
 </div>
-
 </div>

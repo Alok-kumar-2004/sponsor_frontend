@@ -1,0 +1,66 @@
+<br>
+<br>
+<!-- <h1>Sponsors List</h1> -->
+
+<div class="container">
+
+    <div >
+        <form (ngSubmit)="goToSponsors()" >
+            <div class="form-group col-md-6 inline ">
+                
+                <input  [(ngModel)]="EnteredID" type="text" class="form-control" id="id" name="id" placeholder="Search by ID">
+                <button class="btn btn-secondary " type="submit">Search</button>
+            </div>
+        </form>
+
+    </div>
+    <br>
+    <br>
+<div>
+<table width="100%" style="margin-bottom: 50px;" class=" table table-responsive table-striped  border-dark">
+
+    <thead class="table-dark ">
+        <tr>
+            <th>Id</th>
+            <th>Sponsor Name</th>
+            <th>Contact Person</th>
+            <th>Email</th>
+            <th>Contribution Amount</th>
+            <th>Sponsorship Status</th>
+            <th>Commencement Date</th>
+            <th>Closure Date</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead> 
+
+
+    <tbody>
+        <tr *ngFor = "let sponsors of sponsors">
+            <td>{{sponsors.id}}</td>
+            <td>{{sponsors.sponsorName}}</td>
+            <td>{{sponsors.contactPerson}}</td>
+            <td>{{sponsors.email}}</td>
+            <td>{{sponsors.contributionAmount}}</td>
+            <td>{{sponsors.SponsorshipStatus}}</td>
+            <td>{{sponsors.startDate}}</td>
+            <td>{{sponsors.endDate}}</td>
+            <td>
+                <img *ngIf="sponsors.image" [src]="'data:image/jpeg;base64,' + sponsors.image" 
+                     alt="Sponsor Image" class="img-thumbnail" width="50" height="50" />
+                <span *ngIf="!sponsors.image">No Image</span>
+            </td>
+            <td>
+                <button (click) = "updateSponsors(sponsors.id)" class = "btn  btn-secondary btn-sm"> Update</button>
+                <button (click) = "deleteSponsors(sponsors.id)" class = "btn btn-danger btn-sm" style="margin: left 2px"> Delete</button>
+                <button (click) = "detailsOfSponsors(sponsors.id)" class = "btn btn-success btn-sm " style="margin: left 2px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+
+
+</table>
+<br><br><br><br>
+</div>
+
