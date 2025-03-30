@@ -45,14 +45,14 @@ export class UpdateSponsorComponent {
     this.router.navigate(['/show-all-sponsors']);
   }
 
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e: any) => {
-            this.sponsors.image = e.target.result.split(',')[1];
-        };
-        reader.readAsDataURL(file);
-    }
-  }
+  // onFileSelected(event: any) {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //       const reader = new FileReader();
+  //       reader.onload = (e: any) => {
+  //           this.sponsors.image = e.target.result.split(',')[1];
+  //       };
+  //       reader.readAsDataURL(file);
+  //   }
+  // }
 }

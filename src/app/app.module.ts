@@ -39,7 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     HttpClientModule,FormsModule,HomeComponent, BrowserAnimationsModule , 
     MatFormFieldModule, MatInputModule,MatFormFieldModule, MatInputModule, MatDatepickerModule,
-     MatNativeDateModule
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

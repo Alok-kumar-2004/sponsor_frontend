@@ -2,7 +2,7 @@
 <div class="container-sm">
     <div class="col-md-6 offset-md-3 container-sm">
 
-        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" class="row g-3 form-container  container-sm ">
+        <!-- <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" class="row g-3 form-container  container-sm ">
 
             <div class="form-group col-md-6">
                 <label><b>First Name</b></label>
@@ -43,7 +43,7 @@
 
             <div class="form-group col-md-6">
                 <label class="form-label"><b>Sponsorship Status</b></label>
-                <select id="SponsorshipStatus" class="form-select" [(ngModel)]="sponsors.SponsorshipStatus" name="SponsorshipStatus" required #SponsorshipStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && SponsorshipStatus.errors }">
+                <select id="SponsorshipStatus" class="form-select" [(ngModel)]="sponsors.sponsorshipStatus" name="SponsorshipStatus" required #SponsorshipStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && SponsorshipStatus.errors }">
 
 
                     <div *ngIf="f.submitted && SponsorshipStatus.errors" class="invalid-feedback">
@@ -100,15 +100,7 @@
 
             </div>
 
-            <div class="form-group col-md-6">
-                <label><b>Upload Sponsor Image</b></label>
-                <input type="file" class="form-control" (change)="onFileSelected($event)" accept="image/*" />
-            </div>
 
-            <div class="form-group col-md-6" *ngIf="sponsors.image">
-                <label><b>Preview</b></label>
-                <img [src]="sponsors.image" alt="Sponsor Image" class="img-thumbnail" width="150" height="150" />
-            </div>
 
             <br><br><br><br>
 
@@ -123,7 +115,114 @@
                 </div>
             </div>>
 
-        </form>
+        </form> -->
 
+        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" class="row g-3 form-container container-sm ">
+
+            <div class="form-group col-md-6">
+                <label><b>Sponsor Name</b></label>
+                <input type="text" class="form-control" id="sponsorName" [(ngModel)]="sponsors.sponsorName" required minlength="3"
+                    name="sponsorName" #sponsorName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && sponsorName.errors }" />
+                <div *ngIf="f.submitted && sponsorName.errors" class="invalid-feedback">
+                    <div *ngIf="sponsorName.errors['required']">Sponsor Name is required</div>
+                    <div *ngIf="sponsorName.errors['minlength']">Sponsor Name must be at least 3 characters long</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label><b>Contact Person</b></label>
+                <input type="text" class="form-control" id="contactPerson" [(ngModel)]="sponsors.contactPerson" name="contactPerson" required
+                    #contactPerson="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contactPerson.errors }">
+                <div *ngIf="f.submitted && contactPerson.errors" class="invalid-feedback">
+                    <div *ngIf="contactPerson.errors['required']">Contact Person is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><b>Organization Name</b></label>
+                <input type="text" class="form-control" id="organizationName" [(ngModel)]="sponsors.organizationName" required name="organizationName"
+                    #organizationName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && organizationName.errors }">
+                <div *ngIf="f.submitted && organizationName.errors" class="invalid-feedback">
+                    <div *ngIf="organizationName.errors['required']">Organization Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label><b>Email Id</b></label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="sponsors.email" name="email" required
+                    email #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.errors }" />
+                <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+                    <div *ngIf="email.errors['required']">Email is required</div>
+                    <div *ngIf="email.invalid">Invalid email format</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label><b>Contact Number</b></label>
+                <input type="text" class="form-control" id="contactNumber" [(ngModel)]="sponsors.contactNumber" name="contactNumber"
+                    required pattern="^[1-9]\d{9}$" #contactNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contactNumber.errors }" />
+                <div *ngIf="f.submitted && contactNumber.errors" class="invalid-feedback">
+                    <div *ngIf="contactNumber.errors['required']">Contact Number is required</div>
+                    <div *ngIf="contactNumber.errors['pattern']">Contact Number must be a 10-digit number and not start with zero</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="form-label"><b>Sponsorship Status</b></label>
+                <select id="SponsorshipStatus" class="form-select" [(ngModel)]="sponsors.sponsorshipStatus" name="SponsorshipStatus" required
+                    #SponsorshipStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && SponsorshipStatus.errors }">
+                    <option selected disabled value="">Choose...</option>
+                    <option>Active</option>
+                    <option>Pending</option>
+                    <option>Completed</option>
+                    <option>Overdue</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="form-label"><b>Event Name</b></label>
+                <select id="eventName" class="form-select" [(ngModel)]="sponsors.eventName" name="eventName" required
+                    #eventName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventName.errors }">
+                    <option selected disabled value="">Choose...</option>
+                    <option>Soujorn 2023</option>
+                    <option>Soujorn 2024</option>
+                    <option>Soujorn 2025</option>
+                    <option>Soujorn 2026</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label><b>Contribution Amount</b></label>
+                <input type="text" class="form-control" id="contributionAmount" [(ngModel)]="sponsors.contributionAmount" name="contributionAmount"
+                    required pattern="^[1-9]\d{2,}$" #contributionAmount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contributionAmount.errors }" />
+                <div *ngIf="f.submitted && contributionAmount.errors" class="invalid-feedback">
+                    <div *ngIf="contributionAmount.errors['required']">Amount is required</div>
+                    <div *ngIf="contributionAmount.errors['pattern']">Amount must be at least 3 digits and not start with zero</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label><b>Contribution Date</b></label>
+                <input type="date" class="form-control" id="contributionDate" [(ngModel)]="sponsors.contributionDate"
+                    name="contributionDate" required #contributionDate="ngModel" 
+                    [ngClass]="{ 'is-invalid': f.submitted && contributionDate.errors }">
+                <div *ngIf="f.submitted && contributionDate.errors" class="invalid-feedback">
+                    <div *ngIf="contributionDate.errors['required']">Contribution Date is required</div>
+                </div>
+            </div>
+
+            <br><br><br><br>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <button class="btn btn-success full-width-button" type="submit" id="reg">Update</button>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" (click)="goToSponsorsList()"
+                        class="btn btn-danger full-width-button">Cancel</button>
+                </div>
+            </div>
+
+        </form>
     </div>
 </div>

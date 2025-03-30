@@ -15,7 +15,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   ,
   styleUrls: ['./add-sponsors.component.css']
 })
-export class AddSponsorsComponent //implements OnInit//
+export class AddSponsorsComponent 
 {
 
   constructor(
@@ -29,10 +29,8 @@ export class AddSponsorsComponent //implements OnInit//
   submitform!: NgForm;
   private baseURL = "http://localhost:8080/api/v1/sponsors";
   sponsors: Sponsors = new Sponsors();
+
   
-
-
-
 
   saveSponsor() {
     this.SponsorService.addSponsors(this.sponsors).subscribe(data => {
@@ -53,19 +51,6 @@ export class AddSponsorsComponent //implements OnInit//
 
     this.saveSponsor();
   }
-
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e: any) => {
-            this.sponsors.image = e.target.result.split(',')[1];
-        };
-        reader.readAsDataURL(file);
-    }
-}
-
-
 }
 
 

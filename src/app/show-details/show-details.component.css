@@ -1,29 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #3498db, #1a5276);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.header h3 {
+  font-size: 28px;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.sponsor-badge {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.content {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.sponsor-logo {
+  flex: 0 0 280px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  border: 1px dashed #ddd;
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 16px;
+  text-align: center;
+}
+
+.sponsor-info {
+  flex: 1 1 500px;
+}
+
 table {
-    width: 40%;
-    margin-left: 8rem;
-    margin-top: 0.5rem;
-    border-collapse: collapse;
-    outline: 1px solid black; 
-  }
-#btn1{
-  margin-left: 8rem;
-
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-#btn2{
-  margin-left: 1rem;
+table thead {
+  background-color: #34495e;
+  color: white;
 }
-  .box{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-   
-  }
 
-  img{
-    margin-top: 0.3rem;
-    width: 15rem;
-    height: 12rem;
+table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f0f8ff;
+}
+
+table td {
+  padding: 15px;
+}
+
+table td:first-child {
+  font-weight: 600;
+  width: 40%;
+  color: #555;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status-active {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.status-pending {
+  background-color: #f39c12;
+  color: white;
+}
+
+.status-expired {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
   }
+  
+  .sponsor-logo, .sponsor-info {
+    flex: 1 1 100%;
+  }
+  
+  .sponsor-logo {
+    height: 180px;
+  }
+}
 
   
