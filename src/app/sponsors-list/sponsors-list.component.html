@@ -1,67 +1,5 @@
- <!-- <div class="container">
-    <h2 class="page-title">Our Sponsors</h2>
-    <div class="search-container">
-      <form (ngSubmit)="goToSponsors()">
-        <div class="form-group">
-          <input [(ngModel)]="EnteredID" type="text" class="form-control" id="id" name="id" placeholder="Search sponsor by ID">
-          <button class="btn btn-secondary" type="submit">Search</button>
-        </div>
-      </form>
-    </div>
-    <div class="table-container">
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Sponsor Name</th>
-              <th>Contact Number</th>
-              <th>Contact Person</th>
-              <th>Event Name</th>
-              <th>Organization Name</th>
-              <th>Email</th>
-              <th>Contribution</th>
-              <th>Contribution Date</th>
-              <th> status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let sponsors of sponsors">
-              <td>{{sponsors.id}}</td>
-              <td>{{sponsors.sponsorName}}</td>
-              <td>{{sponsors.contactNumber}}</td>
-              <td>{{sponsors.contactPerson}}</td>
-              <td>{{sponsors.eventName}}</td>
-              <td>{{sponsors.organizationName}}</td>
-              <td>{{sponsors.email}}Rs.</td>
-              <td>{{sponsors.contributionAmount}}</td>
-              <td>{{sponsors.contributionDate}}</td>
-              <td>
-                <span class="status-badge status-active">{{sponsors.sponsorshipStatus}}</span>
-              </td>
-              <td class="actions-cell">
-                <button (click)="updateSponsors(sponsors.id)" class="btn btn-secondary btn-sm">Update</button>
-                <button (click)="deleteSponsors(sponsors.id)" class="btn btn-danger btn-sm">Delete</button>
-                <button (click)="detailsOfSponsors(sponsors.id)" class="btn btn-success btn-sm">View</button>
-              </td>
-            </tr>
-           
-            <tr *ngIf="sponsors.length === 0">
-              <td colspan="9" class="no-data-message">
-                No sponsors found. Add a new sponsor to get started.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div> -->
-
   <div class="container">
     <h2 class="page-title">Our Sponsors</h2>
-    
-    <!-- ID Search - keep your existing search functionality -->
     <div class="search-container">
       <form (ngSubmit)="goToSponsors()">
         <div class="form-group">
@@ -122,8 +60,6 @@
         </div>
       </div>
     </div>
-    
-    <!-- No sponsors at all message -->
     <div *ngIf="eventNames.length === 0" class="alert alert-info mt-4">
       No sponsors found. Add a new sponsor to get started.
     </div>

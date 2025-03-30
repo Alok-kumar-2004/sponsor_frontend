@@ -20,15 +20,12 @@ export class UpdateSponsorComponent {
     private route: ActivatedRoute,
     private router: Router) { 
       this.id=0
-      // this.Sponsors = this.sponsors;
     }
-    //loading the data into form 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
 
     this.SponsorService.getSponsorsById(this.id).subscribe(data => {
       this.sponsors = data;
-      // this.Sponsors = data; 
     }, error => console.log(error));
  
  
@@ -44,15 +41,4 @@ export class UpdateSponsorComponent {
   goToSponsorsList(){
     this.router.navigate(['/show-all-sponsors']);
   }
-
-  // onFileSelected(event: any) {
-  //   const file = event.target.files[0];
-  //   if (file) {
-  //       const reader = new FileReader();
-  //       reader.onload = (e: any) => {
-  //           this.sponsors.image = e.target.result.split(',')[1];
-  //       };
-  //       reader.readAsDataURL(file);
-  //   }
-  // }
 }

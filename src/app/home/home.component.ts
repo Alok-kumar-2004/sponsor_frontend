@@ -16,9 +16,8 @@ export class HomeComponent {
     private router: Router) { 
       
     }
-  goToEmployeeList(){
+  goToSponsorsList(){
     this.router.navigate(['/show-all-sponsors']);
   }
-  // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/2000/600`);
 
 }

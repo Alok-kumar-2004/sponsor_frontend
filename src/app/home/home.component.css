@@ -6,9 +6,7 @@
 }
 
 
-/* body{
-    background-color: black;
-} */
+
 #p1{
     font-size: 3.1rem;
 }
@@ -16,9 +14,7 @@
 #p2{
     font-size: 2.5rem;
 }
- /* div {
-    display: block;
-}  */
+
 .navigation{
     display: flex;
     flex-wrap: wrap;
@@ -28,23 +24,6 @@
     font-size: 2.9rem;
     height: 29rem;
 } 
-/* ul {
-   
-    margin: 2rem 0; 
-    padding: 0; 
-  }
-
-  li {
-    list-style-type: style circle;
-    font-size: 1.2rem; 
-    margin-bottom: 0.5rem; Margin using rem units for spacing
-  } */
-
-/* .s1{
-
-    background-image: linear-gradient(to right,white,black);
-} */
-
 
 .divMain{
     display: flex;
@@ -96,34 +75,34 @@ section {
 
 
 ul {
-    list-style-type: none; /* Remove default list style */
-    margin: 1rem 3rem; /* Add some margin using rem units for spacing */
-    padding: 0; /* Remove default padding */
+    list-style-type: none; 
+    margin: 1rem 3rem; 
+    padding: 0; 
   }
 
   li {
-    font-size: 1.5rem; /* Font size using rem units */
-    margin-bottom: 0.2rem; /* Margin using rem units for spacing */
+    font-size: 1.5rem; 
+    margin-bottom: 0.2rem; 
   }
 
   ul.category {
-    margin-left: 0; /* Reset margin for the category list */
+    margin-left: 0; 
   }
 
   ul.category li {
-    font-weight: bold; /* Make category items bold */
-    font-size: 1.5rem; /* Font size for category items */
-    margin-bottom: 0.2rem; /* Adjust margin for category items */
+    font-weight: bold; 
+    font-size: 1.5rem; 
+    margin-bottom: 0.2rem; 
   }
 
   ul.subcategory {
-    list-style-type: disc; /* Use 'disc' for filled circles for subcategories */
-    margin-left: 2rem; /* Indent subcategories */
+    list-style-type: disc; 
+    margin-left: 2rem; 
   }
 
   ul.subcategory li {
-    font-weight: normal; /* Reset font weight for subcategory items */
-    font-size: 1.3rem; /* Font size for subcategory items */
+    font-weight: normal; 
+    font-size: 1.3rem; 
   }
 
 

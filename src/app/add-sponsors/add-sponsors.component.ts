@@ -47,8 +47,6 @@ export class AddSponsorsComponent
   ngOnInit(): void { }
   onSubmit() {
     console.log(this.sponsors);
-
-
     this.saveSponsor();
   }
 }

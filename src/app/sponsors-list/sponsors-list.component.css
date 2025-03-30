@@ -49,8 +49,6 @@
     font-size: 24px;
     font-weight: 600;
   }
-  
-  /* Search form styles */
   .search-container {
     background-color: white;
     padding: 20px;
@@ -131,7 +129,7 @@
     font-size: 13px;
   }
   
-  /* Table styles */
+
   .table-container {
     background-color: white;
     border-radius: 8px;
@@ -178,7 +176,6 @@
     white-space: nowrap;
   }
   
-  /* Status badge styles */
   .status-badge {
     display: inline-block;
     padding: 4px 8px;
@@ -202,7 +199,6 @@
     color: #7f8c8d;
   }
   
-  /* No sponsors message */
   .no-data-message {
     text-align: center;
     padding: 40px;
