@@ -12,7 +12,7 @@ export class SponsorService {
 
 
  
-  private baseURL = "http://localhost:8080/api/v1/sponsors";
+  private baseURL = "sponsor_backend.railway.internal";
 
   constructor(private httpClient: HttpClient) { }
   
